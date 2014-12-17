@@ -1,4 +1,4 @@
 jayroe-portfolio-2015
 =====================
 
-2015 single page, responsive portfolio for jayroe.com/portfolio
+New for 2015, a single page, responsive portfolio for jayroe.com/portfolio
