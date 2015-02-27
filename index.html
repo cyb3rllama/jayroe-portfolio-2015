@@ -10,14 +10,15 @@
 		height: 100%;
 	}
 	body {
-		font-family: Verdana, sans-serif;
+		/*font-family: Verdana, sans-serif;*/
+		font-family: "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif;
 		font-size: 1rem;
 		background-color: #000;
 		color: white;
 		line-height: 1;
 		margin: 0;
 		padding: 0;
-		transition: background-color 0.5s linear;
+		transition: background-color 1s linear;
 		/*transition: color 0.5s linear;*/
 	}
 	a {
@@ -62,19 +63,22 @@
 		margin-bottom: 0;
 	}*/
 	.title-tip {
-		border-bottom: 1px dashed #666;
-	}
-	abbr {
+		/*border-bottom: 1px dashed #666;*/
 		border: none;
 	}
-	abbr[title]:after
-	{
+	.title-tip[title]:after {
 		content: " (" attr(title) ")";
 	}
+	/*abbr {
+		border: none;
+	}
+	abbr[title]:after {
+		content: " (" attr(title) ")";
+	}*/
 	.hide-for-small-inline {
 		display: none;
 	}
-	@media (min-width: 400px) {
+	@media (min-width: 480px) {
 		.hide-for-small-inline {
 			display: inline;
 		}
@@ -99,13 +103,20 @@
 		article {
 			/*background-color: #fff;*/
 		}
-		abbr {
+		.title-tip {
+			border-bottom: 1px dashed #ccc;
+			cursor: help;
+		}
+		.title-tip[title]:after {
+			content: "";
+		}
+		/*abbr {
 			border-bottom: 1px dashed #ccc;
 			cursor: help;
 		}
 		abbr[title]:after {
 			content: "";
-		}
+		}*/
 	}
 	@media (min-width: 768px) {
 		body {
@@ -139,9 +150,22 @@
 
 <div id="main">
 
-<article>
+<aside>
 <h2 id="greeting">Hi,</h2>
-<p>I am a multi-disciplinary professional specializing in Agile team leadership, Web design and front-end development. I enjoy helping others learn, technical consulting and leadership in <abbr title="HTML5, CSS3, JavaScript">front-end technology</abbr>, <abbr title="Sass, Node.js, Grunt">front-end tooling</abbr> and <abbr title="atomic, mobile first, responsive design">design</abbr>.</p>
+<p>[pic] I am a multi-disciplinary professional specializing in <span class="title-tip" title="fail fast, learn faster">Agile</span> team leadership and <span class="title-tip" title="build + measure + learn">Lean methodology</span>, Web design and front-end development. I enjoy helping others learn, technical consulting and leadership in <span class="title-tip" title="HTML5, CSS3, JavaScript">front-end technology</span>, <span class="title-tip" title="Sass, Node.js, Grunt">front-end tooling</span> and <span class="title-tip" title="atomic, mobile first, responsive design">design</span>.</p>
+<p><a href="https://www.linkedin.com/in/wjayroe">LinkedIn Profile</a></p>
+</aside>
+
+<article>
+	gallery here
+</article>
+
+<article>
+	skill summary / philosophy
+</article>
+
+<article>
+	Edu
 </article>
 
 </div>
@@ -173,6 +197,7 @@
 			greeting = "Hi,";
 		}
 		document.getElementById(id).innerHTML = greeting;
+		// ToDo: add timer to update every hour
 	}
 	function copyrightYear(id) {
 		if (!document.getElementById) return false;
