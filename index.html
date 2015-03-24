@@ -185,7 +185,7 @@
 </div>
 
 <footer>
-	&copy; <span id="copyright-year">2015</span> <a href="http://www.jayroe.com/">Will Jayroe</a> | <a href="https://www.linkedin.com/in/wjayroe">LinkedIn Profile</a>
+	&copy; <span class="copyright-year">2015</span> <a href="http://www.jayroe.com/">Will Jayroe</a> | <a href="https://www.linkedin.com/in/wjayroe">LinkedIn Profile</a>
 </footer>
 
 </div>
@@ -213,12 +213,15 @@
 		document.getElementById(id).innerHTML = greeting;
 		// ToDo: add timer to update every hour
 	}
-	function copyrightYear(id) {
-		if (!document.getElementById) return false;
-		if (!document.getElementById(id)) return false;
+	function copyrightYear(classname) {
+		if (!document.querySelectorAll(classname)) return false;
 		var date = new Date();
 		var year = date.getFullYear();
-		document.getElementById(id).innerHTML = year;
+		[].forEach.call(document.querySelectorAll('.'+classname),
+            function(element) {
+                element.innerHTML = year;
+            }
+        );
 	}
 	(function() {
 		greetomatic("greeting");
